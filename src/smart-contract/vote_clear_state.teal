@@ -1,0 +1,23 @@
+#pragma version 5
+int 0
+global CurrentApplicationID
+byte "voted"
+app_local_get_ex
+store 1
+store 0
+global Round
+byte "VoteEnd"
+app_global_get
+<=
+load 1
+&&
+bz main_l2
+load 0
+load 0
+app_global_get
+int 1
+-
+app_global_put
+main_l2:
+int 1
+return
