@@ -47,27 +47,27 @@ export default function Header (){
 // }, 1000);
 //   }
 
-  const [startDate, setStartDate]= useState("")
-  const [endDate, setEndDate] = useState("")
-  // const [countDownDate, setCountDownDate] = useState(countDownTimerHandler())
-  console.log(startDate)
-  console.log(endDate)
+  // const [startDate, setStartDate]= useState("")
+  // const [endDate, setEndDate] = useState("")
+  // // const [countDownDate, setCountDownDate] = useState(countDownTimerHandler())
+  // console.log(startDate)
+  // console.log(endDate)
   let userAccount = useRef()
 
   // const regTime = localStorage.getItem("start")
   // const voteTime = localStorage.getItem('end')
 
-  // configure registration and voting period
-  let status =  client.status().do().then(({}))
-  console.log(status)
-  let RegBegin =  status['last-round'] + 10
-  // let regBegin =  status['time-since-last-round'] + 60
-  let RegEnd = RegBegin + 10
-  let VoteBegin = RegEnd + 10
-  let VoteEnd = VoteBegin + 10
+  // // configure registration and voting period
+  // let status =  client.status().do().then(({}))
+  // console.log(status)
+  // let RegBegin =  status['last-round'] + 10
+  // // let regBegin =  status['time-since-last-round'] + 60
+  // let RegEnd = RegBegin + 10
+  // let VoteBegin = RegEnd + 10
+  // let VoteEnd = VoteBegin + 10
 
-  const regTime = `Registration rounds: ${RegBegin} to ${RegEnd}`
-  const voteTime = `Vote rounds: ${VoteBegin} to ${VoteEnd}`
+  // const regTime = `Registration rounds: ${RegBegin} to ${RegEnd}`
+  // const voteTime = `Vote rounds: ${VoteBegin} to ${VoteEnd}`
 
   const connectAlgoSigner = async () => {
     let resp = await AlgoSigner.connect()
@@ -84,7 +84,7 @@ export default function Header (){
 
  }
 
- let client = new algosdk.Algodv2(CONSTANTS.algodToken, CONSTANTS.baseServer, CONSTANTS.port, CONSTANTS.headers)
+ let client = new algosdk.Algodv2(CONSTANTS.algodToken, CONSTANTS.baseServer, CONSTANTS.port)
 
 
  //OPTIN
@@ -145,11 +145,11 @@ const Optin = async (sender, index) => {
             <div>
             <label for="StartDate">StartDate:</label>
             {/* <input type="date" id="start" name="startDate" value={startDate} onChange={(e) => setStartDate(e.currentTarget.value)}/> */}
-            <h5>{regTime}</h5>
+            <h5>Reg Time</h5>
             </div>
             <div>
             <label for="EndDate">EndDate:</label>
-            <h5>{voteTime}</h5>
+            <h5>Vote Time</h5>
             {/* <input type="date" id="end" name="endDate" value={endDate} onChange={(e) => setEndDate(e.currentTarget.value)}/> */}
             </div>
           </Col>

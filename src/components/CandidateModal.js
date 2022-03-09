@@ -35,7 +35,7 @@ export default function CandidateModal(props){
 
   
   const endDate = localStorage.getItem("endDate")
-  let client = new algosdk.Algodv2(CONSTANTS.algodToken, CONSTANTS.baseServer, CONSTANTS.port, CONSTANTS.headers)
+  let client = new algosdk.Algodv2(CONSTANTS.algodToken, CONSTANTS.baseServer, CONSTANTS.port)
 
   //  CALL(NOOP)
 // call application with arguments
@@ -107,7 +107,6 @@ console.log(userAccount.current)
 const submitVoteHandler = ()=>{
   const value= radioValue
    console.log(value)
-  //  localStorage.setItem("candidate", value)
    noop(76645072, value)
  }
 

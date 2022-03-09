@@ -46,7 +46,7 @@ export default function MainContent(){
           <Button style={{backgroundColor: '#6C63FF'}} onClick={candidateHandler}>VOTE NOW</Button>
           <Button style={{backgroundColor: 'green',  marginLeft:'24px'}} onClick={resultHandler}> RESULT</Button>
           <CandidateModal show={showCandidate} onHide={() => setShowCandidate(false)}/>
-          <ResultModal show={showResult} onHide={() => setShowResult(false)}/>
+          <ResultModal show={showResult} onHide={() => setShowResult(false)} />
         </Col>
         <Col>
           <img src={vote}  alt='vote'/>
