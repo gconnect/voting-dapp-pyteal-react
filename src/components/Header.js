@@ -82,6 +82,7 @@ export default function Header (){
  console.log(userAccount.current)
        
  }
+//  const token =  {"X-API-Key": process.env.REACT_APP_API_KEY}
 
  let client = new algosdk.Algodv2(CONSTANTS.algodToken, CONSTANTS.baseServer, CONSTANTS.port)
 
