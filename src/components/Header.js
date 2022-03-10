@@ -51,7 +51,6 @@ export default function Header (){
   // // const [countDownDate, setCountDownDate] = useState(countDownTimerHandler())
   // console.log(startDate)
   // console.log(endDate)
-  let userAccount = useRef()
 
   // const regTime = localStorage.getItem("start")
   // const voteTime = localStorage.getItem('end')
@@ -67,7 +66,7 @@ export default function Header (){
 
   // const regTime = `Registration rounds: ${RegBegin} to ${RegEnd}`
   // const voteTime = `Vote rounds: ${VoteBegin} to ${VoteEnd}`
-
+  let userAccount = useRef()
   const connectAlgoSigner = async () => {
     let resp = await AlgoSigner.connect()
         console.log(resp)
@@ -132,12 +131,12 @@ const Optin = async (sender, index) => {
           </Col>
           <Col>
             <div>
-            <label for="StartDate">StartDate:</label>
+            {/* <label for="StartDate">StartDate:</label> */}
             {/* <input type="date" id="start" name="startDate" value={startDate} onChange={(e) => setStartDate(e.currentTarget.value)}/> */}
             {/* <h5>Reg Time</h5> */}
             </div>
             <div>
-            <label for="EndDate">EndDate:</label>
+            {/* <label for="EndDate">EndDate:</label> */}
             {/* <h5>Vote Time</h5> */}
             {/* <input type="date" id="end" name="endDate" value={endDate} onChange={(e) => setEndDate(e.currentTarget.value)}/> */}
             </div>
