@@ -1,4 +1,5 @@
 # Building and Deploying a Decentralised Voting System with PyTeal and React
+![Frame 27](https://user-images.githubusercontent.com/23031920/157606012-cfb507f7-dd0b-41c4-ab88-f7952b06ee7e.jpeg)
 
 
 The business value of this tutorial is to teach how to write a smart contract code with PyTeal and Deploy using the Algorand JavaScript SDK and React on the Frontend to interact with the application.
