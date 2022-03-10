@@ -51,7 +51,7 @@ Here is a [demo link](https://votingdapp.vercel.app/) to the deployed Applicatio
 Distributed under the MIT License. See for more information. [LICENSE](https://github.com/gconnect/voting-dapp-pyteal-react/blob/master/LICENSE)
 
 # Blog and Video Tutorial
-For more details you can checkout the blog post [here](https://developer.algorand.org/tutorials/building-and-deploying-voting-smart-contract-with-pyteal-and-react/) . And here is the link to the [youtube demo]()
+For more details you can checkout the blog post [here](https://developer.algorand.org/tutorials/building-and-deploying-voting-smart-contract-with-pyteal-and-react/) . And here is the link to the [youtube demo](https://youtu.be/RWpB7p0Aas0)
 
 # Disclaimer
 
