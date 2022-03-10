@@ -8,6 +8,7 @@ import result from '../assets/images/result.svg'
 import wallet from '../assets/images/wallet.svg'
 import CandidateModal from './CandidateModal'
 import ResultModal from './ResultModal'
+import { CONSTANTS } from './Constants'
 const Wrapper = styled.div`
   display: flex;
 `
@@ -44,7 +45,7 @@ export default function MainContent(){
           <Title>Decentralized Voting</Title>
           <SubText>Vote for the right candidate!</SubText>
           <Button style={{backgroundColor: '#6C63FF'}} onClick={candidateHandler}>VOTE NOW</Button>
-          <a href='https://testnet.algoexplorer.io/application/76927698' rel='noreferrer' target="_blank">
+          <a href='https://testnet.algoexplorer.io/application/76971672' rel='noreferrer' target="_blank">
           <Button style={{backgroundColor: 'green',  marginLeft:'24px'}}> RESULT</Button>
           </a>
           <CandidateModal show={showCandidate} onHide={() => setShowCandidate(false)}/>
