@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# Building and Deploying a Decentralised Voting System with PyTeal and React
+![Frame 27](https://user-images.githubusercontent.com/23031920/157607141-556aceb3-1357-4117-9cc9-6f43c91a0eb5.jpeg)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+The business value of this tutorial is to teach how to write a smart contract code with PyTeal and Deploy using the Algorand JavaScript SDK and React on the Frontend to interact with the application.
 
-In the project directory, you can run:
+The goal of the voting smart contract is to enable voters vote for their candidate of choice from a list of candidates.And the votes will be stored globally on the Algorand blockchain.
 
-### `npm start`
+The voting system allows accounts to register and vote for arbitrary choices. Here a choice is any byte slice and anyone is allowed to register to vote.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This tutorial has a configurable registration period defined by the global state Registration Begin and Registration End which restrict when accounts can register to vote. There is also a separate configurable voting period defined by the global state Voting Begin and Voting End which restrict when voting can take place. But for the purpose of testing/demo the registration and voting period will be left open.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+An account must register in order to vote. Accounts cannot vote more than once. The results are visible in the global state of the application, and the winner is the candidate with the highest number of votes.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## PyTeal Smart Contract
+PyTeal is a python library for generating TEAL programs that provides a convenient and familiar syntax.
+This handles building of the smart contract with PyTeal. The smart contract code can be found in `src/contract.py`
 
-### `npm run build`
+## TEAL
+TEAL is Transaction Execution Approval Language. PyTeal code will be compiled to TEAL. The TEAL code consist of the Approval Program and Clear State Program.
+The Approval program can be found in `src/contract/vote_approval.teal` and the Clear State Program can be found in `src/contract/vote_clear_state.teal`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Frontend Interactions with React
+To interact with the application the UI code can be found in `src/components`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## AlgoSigner
+- The AlgoSigner will be used for signing the transactions on the demo app.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Deploy Smart Contract with the Algorand JavaScript SDK
+The JavaScript SDK will be used for deploying the smart contract code.
 
-### `npm run eject`
+# Setup Requirements
+- [Algorand JavaScript SDK](https://github.com/algorand/js-algorand-sdk)
+- [Vs Code](https://code.visualstudio.com/) or any IDE of your choice
+- [Node Package Manager](https://nodejs.org/download/)
+- [Create React App](https://github.com/facebook/create-react-app) . This creates a react boilerplate app.
+- [Styled Components](https://styled-components.com/)
+- [Python 3.6 or higher](https://www.python.org/downloads/)
+- [Pyteal Installation](https://pyteal.readthedocs.io/en/stable/installation.html)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Run the Code
+To test the code fork the repository and run `npm start`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Demo
+<img width="1440" alt="Screenshot 2022-03-10 at 01 45 26" src="https://user-images.githubusercontent.com/23031920/157602314-a14f9b30-f906-4720-ba1c-34833df73567.png">
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Here is a [demo link]() to the deployed Application on vercel.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# License
+Distributed under the MIT License. See for more information. [LICENSE](https://github.com/gconnect/voting-dapp-pyteal-react/blob/master/LICENSE)
 
-## Learn More
+# Blog and Video Tutorial
+For more details you can checkout the blog post [here]() . And here is the link to the [youtube demo]()
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Disclaimer
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Warning
+This project is not audited and should not be used in a production environment.
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
