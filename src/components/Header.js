@@ -1,9 +1,8 @@
 /*global AlgoSigner*/
-import React, {useEffect, useState, useRef} from 'react';
+import React, {useRef} from 'react';
 import {Container,Row, Col, Button} from 'react-bootstrap'
 import logo from '../assets/images/AlgoVote.svg'
 import { CONSTANTS } from './Constants';
-import { sender, senderSecret } from './account';
 import algosdk from'algosdk';
 
 export default function Header (){
@@ -73,6 +72,7 @@ export default function Header (){
     let resp = await AlgoSigner.connect()
         console.log(resp)
         getUserAccount()
+        // if()
   }
 
   const getUserAccount = async () =>{
@@ -81,11 +81,10 @@ export default function Header (){
        })
  // console.log(userAccount.current[0]['address'])
  console.log(userAccount.current)
-
+       
  }
 
  let client = new algosdk.Algodv2(CONSTANTS.algodToken, CONSTANTS.baseServer, CONSTANTS.port)
-
 
  //OPTIN
 // create unsigned transaction
@@ -108,32 +107,22 @@ const Optin = async (sender, index) => {
    let binarySignedTx = await AlgoSigner.encoding.base64ToMsgpack(signedTxs[0].blob);
 
     // Send the transaction through the SDK client
-   let id = await client.sendRawTransaction(binarySignedTx).do();
-       console.log(id)
-      //  setLoading(false)
+   let txId = await client.sendRawTransaction(binarySignedTx).do();
+       console.log(txId)
+                          
+  // Wait for transaction to be confirmed
+    const confirmedTxn = await algosdk.waitForConfirmation(client, txId, 4);
+    console.log("confirmed" + confirmedTxn)
 
-    // let txId = txn.txID().toString();
-
-    // let signedTxn = txn.signTxn(userAccount.current);
-    // console.log("Signed transaction with txID: %s", txId);
-
-    // // Submit the transaction
-    // await client.sendRawTransaction(signedTxn).do()                           
-    //     // Wait for transaction to be confirmed
-    //    const confirmedTxn = await algosdk.waitForConfirmation(client, txId, 4);
-    //     console.log("confirmed" + confirmedTxn)
-
-    //     //Get the completed Transaction
-    //     console.log("Transaction " + txId + " confirmed in round " + confirmedTxn["confirmed-round"]);
-    //     // display results
-    // // display results
-    // let transactionResponse = await client.pendingTransactionInformation(txId).do();
-    // console.log("Opted-in to app-id:",transactionResponse['txn']['txn']['apid'])
+  //Get the completed Transaction
+  console.log("Transaction " + txId + " confirmed in round " + confirmedTxn["confirmed-round"]);
+        // display results
+    let transactionResponse = await client.pendingTransactionInformation(txId).do();
+    console.log("Opted-in to app-id:",transactionResponse['txn']['txn']['apid'])
   }catch(err){
     console.log(err)
   }
 }
-
   return(
     <div>
       <Container style={{marginTop: '24px'}}>
@@ -145,22 +134,21 @@ const Optin = async (sender, index) => {
             <div>
             <label for="StartDate">StartDate:</label>
             {/* <input type="date" id="start" name="startDate" value={startDate} onChange={(e) => setStartDate(e.currentTarget.value)}/> */}
-            <h5>Reg Time</h5>
+            {/* <h5>Reg Time</h5> */}
             </div>
             <div>
             <label for="EndDate">EndDate:</label>
-            <h5>Vote Time</h5>
+            {/* <h5>Vote Time</h5> */}
             {/* <input type="date" id="end" name="endDate" value={endDate} onChange={(e) => setEndDate(e.currentTarget.value)}/> */}
             </div>
           </Col>
           <Col md='4' style={{display: 'inline'}}> 
-          <h4>Voting Ends in </h4>
-          <Button style={{backgroundColor: 'orange'}} onClick={() => Optin(userAccount.current[0].address,76645072)}>Register</Button>
+          {/* <h4>Voting Ends in </h4> */}
+          <Button style={{backgroundColor: 'orange'}} onClick={() => Optin(userAccount.current[0].address,CONSTANTS.APP_ID)}>Register</Button>
           <h4 id='demo' style={{color: 'red'}}></h4>
           </Col>
           <Col md='auto'>
             <Button style={{backgroundColor: '#6C63FF'}} onClick={connectAlgoSigner}>Connect Wallet</Button>
-
           </Col>
         </Row>
       </Container>

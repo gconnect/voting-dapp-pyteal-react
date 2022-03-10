@@ -1,6 +1,6 @@
 /*global AlgoSigner*/
 import { useState, useRef } from 'react';
-import {Modal, Button, ButtonGroup, ToggleButton} from 'react-bootstrap'
+import {Modal, Button} from 'react-bootstrap'
 import styled from 'styled-components';
 import algosdk from'algosdk';
 import { CONSTANTS } from './Constants';
@@ -74,31 +74,24 @@ console.log(userAccount.current)
     let binarySignedTx = await AlgoSigner.encoding.base64ToMsgpack(signedTxs[0].blob);
 
     // Send the transaction through the SDK client
-    let id = await client.sendRawTransaction(binarySignedTx).do();
-      console.log(id)
-  //   let txId = txn.txID().toString();
-  //   // Sign the transaction
-  //   let signedTxn = txn.signTxn(userAccout.sk);
-  //   console.log("Signed transaction with txID: %s", txId);
+    let txId = await client.sendRawTransaction(binarySignedTx).do();
+      console.log(txId)
 
-  //   // Submit the transaction
-  //   await client.sendRawTransaction(signedTxn).do()                           
-  //       // Wait for transaction to be confirmed
-  //      const confirmedTxn = await algosdk.waitForConfirmation(client, txId, 4);
-  //       console.log("confirmed" + confirmedTxn)
+    const confirmedTxn = await algosdk.waitForConfirmation(client, txId, 4);
+    console.log("confirmed" + confirmedTxn)
 
-  //       //Get the completed Transaction
-  //       console.log("Transaction " + txId + " confirmed in round " + confirmedTxn["confirmed-round"]);
+    //Get the completed Transaction
+    console.log("Transaction " + txId + " confirmed in round " + confirmedTxn["confirmed-round"]);
 
-  // // display results
-  // let transactionResponse = await client.pendingTransactionInformation(txId).do();
-  // console.log("Called app-id:",transactionResponse['txn']['txn']['apid'])
-  // if (transactionResponse['global-state-delta'] !== undefined ) {
-  //     console.log("Global State updated:",transactionResponse['global-state-delta']);
-  // }
-  // if (transactionResponse['local-state-delta'] !== undefined ) {
-  //     console.log("Local State updated:",transactionResponse['local-state-delta']);
-  // }
+  // display results
+  let transactionResponse = await client.pendingTransactionInformation(txId).do();
+  console.log("Called app-id:",transactionResponse['txn']['txn']['apid'])
+  if (transactionResponse['global-state-delta'] !== undefined ) {
+      console.log("Global State updated:",transactionResponse['global-state-delta']);
+  }
+  if (transactionResponse['local-state-delta'] !== undefined ) {
+      console.log("Local State updated:",transactionResponse['local-state-delta']);
+  }
   }catch(err){
     console.log(err)
   }
@@ -107,7 +100,7 @@ console.log(userAccount.current)
 const submitVoteHandler = ()=>{
   const value= radioValue
    console.log(value)
-   noop(76645072, value)
+   noop(CONSTANTS.APP_ID, value)
  }
 
   return(

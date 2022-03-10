@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState} from 'react'
 import {Button, Row, Col, Container} from 'react-bootstrap'
 import styled from 'styled-components'
 import vote from '../assets/images/vote.svg'
@@ -29,9 +29,9 @@ export default function MainContent(){
   const [showCandidate, setShowCandidate] = useState(false)
   const [showResult, setShowResult] = useState(false)
 
-  const resultHandler = () =>{
-    setShowResult(true)
-  }
+  // const resultHandler = () =>{
+  //   setShowResult(true)
+  // }
 
   const candidateHandler = () =>{
     setShowCandidate(true)
@@ -44,7 +44,9 @@ export default function MainContent(){
           <Title>Decentralized Voting</Title>
           <SubText>Vote for the right candidate!</SubText>
           <Button style={{backgroundColor: '#6C63FF'}} onClick={candidateHandler}>VOTE NOW</Button>
-          <Button style={{backgroundColor: 'green',  marginLeft:'24px'}} onClick={resultHandler}> RESULT</Button>
+          <a href='https://testnet.algoexplorer.io/application/76927698' rel='noreferrer' target="_blank">
+          <Button style={{backgroundColor: 'green',  marginLeft:'24px'}}> RESULT</Button>
+          </a>
           <CandidateModal show={showCandidate} onHide={() => setShowCandidate(false)}/>
           <ResultModal show={showResult} onHide={() => setShowResult(false)} />
         </Col>
