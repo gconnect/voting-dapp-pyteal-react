@@ -1,5 +1,5 @@
 # Building and Deploying a Decentralised Voting System with PyTeal and React
-![Frame 27](https://user-images.githubusercontent.com/23031920/157606012-cfb507f7-dd0b-41c4-ab88-f7952b06ee7e.jpeg)
+![Frame 27](https://user-images.githubusercontent.com/23031920/157607141-556aceb3-1357-4117-9cc9-6f43c91a0eb5.jpeg)
 
 
 The business value of this tutorial is to teach how to write a smart contract code with PyTeal and Deploy using the Algorand JavaScript SDK and React on the Frontend to interact with the application.
@@ -48,14 +48,14 @@ To test the code fork the repository and run `npm start`
 Here is a [demo link]() to the deployed Application on vercel.
 
 # License
-Distributed under the MIT License. See for more information. [LICENSE]()
+Distributed under the MIT License. See for more information. [LICENSE](https://github.com/gconnect/voting-dapp-pyteal-react/blob/master/LICENSE)
 
 # Blog and Video Tutorial
 For more details you can checkout the blog post [here]() . And here is the link to the [youtube demo]()
 
 # Disclaimer
 
-!!! Warning
+# Warning
 This project is not audited and should not be used in a production environment.
 
 
