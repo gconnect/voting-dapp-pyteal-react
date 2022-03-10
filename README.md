@@ -45,13 +45,13 @@ To test the code fork the repository and run `npm start`
 # Demo
 <img width="1440" alt="Screenshot 2022-03-10 at 01 45 26" src="https://user-images.githubusercontent.com/23031920/157602314-a14f9b30-f906-4720-ba1c-34833df73567.png">
 
-Here is a [demo link]() to the deployed Application on vercel.
+Here is a [demo link](https://votingdapp.vercel.app/) to the deployed Application on vercel.
 
 # License
 Distributed under the MIT License. See for more information. [LICENSE](https://github.com/gconnect/voting-dapp-pyteal-react/blob/master/LICENSE)
 
 # Blog and Video Tutorial
-For more details you can checkout the blog post [here]() . And here is the link to the [youtube demo]()
+For more details you can checkout the blog post [here](https://developer.algorand.org/tutorials/building-and-deploying-voting-smart-contract-with-pyteal-and-react/) . And here is the link to the [youtube demo]()
 
 # Disclaimer
 
