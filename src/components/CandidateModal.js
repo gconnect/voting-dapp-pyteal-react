@@ -34,7 +34,7 @@ export default function CandidateModal(props){
   ];
 
   
-  const endDate = localStorage.getItem("endDate")
+  // const endDate = localStorage.getItem("endDate")
   let client = new algosdk.Algodv2(CONSTANTS.algodToken, CONSTANTS.baseServer, CONSTANTS.port)
 
   //  CALL(NOOP)
@@ -120,8 +120,7 @@ const submitVoteHandler = ()=>{
       </Modal.Header>
       <Modal.Body>
       <div>
-        { endDate <= 0 ? <h5>Voting has ended</h5> :
-          
+        {  
         radios.map((radio, idx) => (
             <RadioContainer key={idx} >
               <input type="radio" id={radio.name} name="candidates" value={radio.value} checked={radioValue === radio.value}
@@ -134,9 +133,9 @@ const submitVoteHandler = ()=>{
           ))}
       </div>
       </Modal.Body>
-      {endDate < 0 ? "" : <Modal.Footer>
+       <Modal.Footer>
         <Button onClick={submitVoteHandler}>Submit Vote</Button>
-      </Modal.Footer>}
+      </Modal.Footer>
       
     </Modal>
     </div>
