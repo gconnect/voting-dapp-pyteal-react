@@ -145,7 +145,7 @@ const Optin = async (sender, index) => {
           <Col md='4' style={{display: 'inline'}}> 
           {/* <h4>Voting Ends in </h4> */}
           <Button style={{backgroundColor: 'orange'}} onClick={() => Optin(userAccount.current[0].address,CONSTANTS.APP_ID)}>Register</Button>
-          <h4 id='demo' style={{color: 'red'}}></h4>
+          {/* <h4 id='demo' style={{color: 'red'}}></h4> */}
           </Col>
           <Col md='auto'>
             <Button style={{backgroundColor: '#6C63FF'}} onClick={connectAlgoSigner}>Connect Wallet</Button>

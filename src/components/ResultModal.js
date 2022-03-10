@@ -1,7 +1,7 @@
 import React from 'react';
 import {Modal, Table, Row, Col} from 'react-bootstrap'
-import { CONSTANTS } from './Constants';
-import algosdk from'algosdk';
+// import { CONSTANTS } from './Constants';
+// import algosdk from'algosdk';
 
 
 
@@ -17,46 +17,46 @@ export default function ResultModal(props){
   ];
   // const endDate = localStorage.getItem("endDate")
 
-  const client = new algosdk.Algodv2(CONSTANTS.algodToken, CONSTANTS.baseServer, CONSTANTS.port)
+  // const client = new algosdk.Algodv2(CONSTANTS.algodToken, CONSTANTS.baseServer, CONSTANTS.port)
 // read global state of application
-  const readGlobalState = async (index) => {
-    try{
-      let applicationInfoResponse = await client.getApplicationByID(index).do();
-      let globalState = applicationInfoResponse['params']['global-state']
-      return globalState.map((state) =>{
-        return state
-      })
-    }catch(err){
-      console.log(err)
-    }
-  }
-  const args = [
-    btoa("RegBegin"),
-    btoa("RegEnd"),
-    btoa("VoteBegin"),
-    btoa("VoteEnd"),
-    btoa("Creator"),
-  ]
+  // const readGlobalState = async (index) => {
+  //   try{
+  //     let applicationInfoResponse = await client.getApplicationByID(index).do();
+  //     let globalState = applicationInfoResponse['params']['global-state']
+  //     return globalState.map((state) =>{
+  //       return state
+  //     })
+  //   }catch(err){
+  //     console.log(err)
+  //   }
+  // }
+  // const args = [
+  //   btoa("RegBegin"),
+  //   btoa("RegEnd"),
+  //   btoa("VoteBegin"),
+  //   btoa("VoteEnd"),
+  //   btoa("Creator"),
+  // ]
 
 // useEffect(() =>{
 //     fetchGlobalState()
 // })
 
 var filteredItems = []
-const fetchGlobalState = async () => {
-  const gloablState = await readGlobalState(CONSTANTS.APP_ID)
-  gloablState.forEach(item => {
-  if (!args.includes(item.key)) {
-    filteredItems.push(item)
-  }
-  console.log(filteredItems)
-  //Code to get the winner with the highest vote count
-  // let maxGame = filteredItems.reduce((max, item) => max.value.uint > item.value.uint ? max.key : item);
-  // console.log(atob(maxGame))
+// const fetchGlobalState = async () => {
+//   const gloablState = await readGlobalState(CONSTANTS.APP_ID)
+//   gloablState.forEach(item => {
+//   if (!args.includes(item.key)) {
+//     filteredItems.push(item)
+//   }
+//   console.log(filteredItems)
+//   //Code to get the winner with the highest vote count
+//   // let maxGame = filteredItems.reduce((max, item) => max.value.uint > item.value.uint ? max.key : item);
+//   // console.log(atob(maxGame))
   
-  //Get all Candidates that was voted for
-  // filteredItems.map((item) => item)
-})}
+//   //Get all Candidates that was voted for
+//   // filteredItems.map((item) => item)
+// })}
 console.log(filteredItems.length)
 
   return(
