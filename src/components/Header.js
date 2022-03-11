@@ -4,6 +4,7 @@ import {Container,Row, Col, Button} from 'react-bootstrap'
 import logo from '../assets/images/AlgoVote.svg'
 import { CONSTANTS } from './Constants';
 import algosdk from'algosdk';
+import env from 'process'
 
 export default function Header (){
 //   useEffect(() =>{
@@ -82,9 +83,10 @@ export default function Header (){
  console.log(userAccount.current)
        
  }
-//  const token =  {"X-API-Key": process.env.REACT_APP_API_KEY}
+ const token =  {"x-api-key" : process.env.REACT_APP_API_KEY}
 
- let client = new algosdk.Algodv2(CONSTANTS.algodToken, CONSTANTS.baseServer, CONSTANTS.port)
+
+ let client = new algosdk.Algodv2(token, CONSTANTS.baseServer, CONSTANTS.port)
 
  //OPTIN
 // create unsigned transaction
