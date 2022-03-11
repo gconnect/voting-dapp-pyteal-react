@@ -86,7 +86,7 @@ export default function Header (){
  const token =  {"x-api-key" : process.env.REACT_APP_API_KEY}
 
 
- let client = new algosdk.Algodv2(token, CONSTANTS.baseServer, CONSTANTS.port)
+ let client = new algosdk.Algodv2(CONSTANTS.algodToken, CONSTANTS.baseServer, CONSTANTS.port)
 
  //OPTIN
 // create unsigned transaction

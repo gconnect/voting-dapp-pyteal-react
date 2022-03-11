@@ -30,7 +30,7 @@ const algosdk = require('algosdk');
   const algodToken = 'API-KEY';
   const baseServer = 'https://testnet-algorand.api.purestake.io/ps2/';
   const port = "";
-  const headers ={"X-API-Key": "API-KEY" }  
+  const headers ={"X-API-Key": process.env.REACT_APP_API_KEY}  
     
   let client = new algosdk.Algodv2(algodToken, baseServer, port, headers)
 
