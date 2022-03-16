@@ -43,7 +43,7 @@ The JavaScript SDK will be used for deploying the smart contract code.
 To test the code fork the repository and run `npm start`
 
 # Demo
-<img width="1440" alt="Screenshot 2022-03-10 at 01 45 26" src="https://user-images.githubusercontent.com/23031920/157602314-a14f9b30-f906-4720-ba1c-34833df73567.png">
+<img width="1440" alt="Screenshot 2022-03-16 at 03 14 24" src="https://user-images.githubusercontent.com/23031920/158504411-bb1eef56-0bdb-4f6c-881c-875294b2976a.png">
 
 Here is a [demo link](https://votingdapp.vercel.app/) to the deployed Application on vercel.
 
