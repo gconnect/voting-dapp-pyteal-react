@@ -34,8 +34,8 @@ export default function CandidateModal(props){
   ];
 
   
-  // const endDate = localStorage.getItem("endDate")
-  let client = new algosdk.Algodv2(CONSTANTS.algodToken, CONSTANTS.baseServer, CONSTANTS.port)
+// const endDate = localStorage.getItem("endDate")
+let client = new algosdk.Algodv2(CONSTANTS.algodToken, CONSTANTS.baseServer, CONSTANTS.port)
 
   //  CALL(NOOP)
 // call application with arguments
@@ -134,7 +134,7 @@ const submitVoteHandler = ()=>{
       </div>
       </Modal.Body>
        <Modal.Footer>
-        <Button onClick={submitVoteHandler}>Submit Vote</Button>
+        <Button onClick={() =>submitVoteHandler()}>Submit Vote</Button>
       </Modal.Footer>
       
     </Modal>
