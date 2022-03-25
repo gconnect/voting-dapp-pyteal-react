@@ -42,7 +42,7 @@ The JavaScript SDK will be used for deploying the smart contract code.
 ## Run the Code
 To test the code 
 - Fork the repository 
-- `npm install` this will install all required dependencies. ( If you encounter any issue after doing this you can delete the node module folder and do `npm install` again
+- Do `npm install` this will install all required dependencies. (If you encounter any issue after doing this you can delete the node module folder and do `npm install` again)
 - run `npm start` to start the local server at localhost:3000
 
 # Demo
