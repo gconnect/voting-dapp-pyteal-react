@@ -40,7 +40,10 @@ The JavaScript SDK will be used for deploying the smart contract code.
 - [Pyteal Installation](https://pyteal.readthedocs.io/en/stable/installation.html)
 
 ## Run the Code
-To test the code fork the repository and run `npm start`
+To test the code 
+- Fork the repository 
+- `npm install` this will install all required dependencies. ( If you encounter any issue after doing this you can delete the node module folder and do `npm install` again
+- run `npm start` to start the local server at localhost:3000
 
 # Demo
 <img width="1440" alt="Screenshot 2022-03-16 at 03 14 24" src="https://user-images.githubusercontent.com/23031920/158504411-bb1eef56-0bdb-4f6c-881c-875294b2976a.png">
